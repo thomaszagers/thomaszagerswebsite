@@ -112,3 +112,13 @@ export type MediaItemData = {
   featured?: boolean;
   order?: number;
 };
+
+export type RepertoireItemData = {
+  _id: string;
+  composer: string;
+  workTitle: string;
+  category?: "classical" | "jazz" | "chamber-music" | "collaboration" | "other";
+  duration?: string;
+  notes?: string;
+  order?: number;
+};

@@ -7,8 +7,9 @@ export const sanityClient = createClient({
   apiVersion: "2025-01-01",
   useCdn: true,
 });
+
 const builder = imageUrlBuilder(sanityClient);
 
-export function urlFor(source: unknown) {
+export function urlFor(source: Parameters<typeof builder.image>[0]) {
   return builder.image(source);
 }

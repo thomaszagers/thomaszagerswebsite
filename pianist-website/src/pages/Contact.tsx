@@ -44,9 +44,6 @@ export default function Contact() {
               </p>
             ) : null}
 
-            {settings.phone ? <p>Phone: {settings.phone}</p> : null}
-            {settings.location ? <p>Location: {settings.location}</p> : null}
-
             {settings.socialLinks?.length ? (
               <div className="space-y-3 pt-2">
                 <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
