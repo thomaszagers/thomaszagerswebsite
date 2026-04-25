@@ -1,12 +1,10 @@
 type PageHeroProps = {
-  kicker: string;
   title: string;
   description?: string;
   backgroundSrc: string;
 };
 
 export default function PageHero({
-  kicker,
   title,
   description,
   backgroundSrc,
@@ -27,9 +25,6 @@ export default function PageHero({
       <div className="relative z-10">
         <div className="container-shell flex min-h-[41vh] items-end py-20 sm:min-h-[46vh] sm:py-24 lg:min-h-[52vh] lg:py-28">
           <div className="max-w-4xl pt-16 sm:pt-20">
-            <div className="inline-flex rounded-full border border-white/12 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/90 backdrop-blur-md">
-              {kicker}
-            </div>
 
             <h1 className="editorial-title mt-5 text-6xl font-semibold leading-[0.92] text-white sm:text-7xl md:text-8xl xl:text-[7rem]">
               {title}

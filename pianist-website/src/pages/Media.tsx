@@ -140,11 +140,11 @@ function getMediaPreviewImage(
   spotifyThumbs: Record<string, string>,
 ) {
   if (item.previewImage) {
-    return urlFor(item.previewImage).width(1200).height(1400).fit("crop").url();
+    return urlFor(item.previewImage).width(1400).height(1050).fit("crop").url();
   }
 
   if (item.image) {
-    return urlFor(item.image).width(1200).height(1400).fit("crop").url();
+    return urlFor(item.image).width(1400).height(1050).fit("crop").url();
   }
 
   const youtubeId = getYouTubeId(item.embedUrl);
@@ -472,7 +472,6 @@ export default function Media() {
   return (
     <div className="bg-[var(--background)]">
       <PageHero
-        kicker="Media"
         title={mediaPage?.heroTitle || "Media Archive"}
         description={
           mediaPage?.heroDescription ||
