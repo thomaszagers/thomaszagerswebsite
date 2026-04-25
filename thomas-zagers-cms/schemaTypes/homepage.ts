@@ -19,24 +19,14 @@ export const homepageType = defineType({
       description:
         "Example: Pianist - Begeleider/Muzikaal leider - Componist/Arrangeur",
     }),
-    defineField({
-      name: "heroDescription",
-      title: "Hero description",
-      type: "text",
-      rows: 3,
-    }),
+
     defineField({
       name: "heroImage",
       title: "Hero background image",
       type: "image",
       options: { hotspot: true },
     }),
-    defineField({
-      name: "heroPrimaryCtaLabel",
-      title: "Primary CTA label",
-      type: "string",
-      initialValue: "Bekijk agenda",
-    }),
+
     defineField({
       name: "heroSecondaryCtaLabel",
       title: "Secondary CTA label",

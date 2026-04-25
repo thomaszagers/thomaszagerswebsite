@@ -3,13 +3,9 @@ import AppLayout from "./layout/AppLayout";
 import Home from "./pages/Home";
 import Agenda from "./pages/Agenda";
 import Media from "./pages/Media";
+import NotFound from "./pages/NotFound"
 
-import AdminLogin from "./pages/admin/AdminLogin";
-import AdminDashboard from "./pages/admin/AdminDashboard";
-import AdminEventsList from "./pages/admin/AdminEventsList";
-import AdminEventForm from "./pages/admin/AdminEventForm";
-import AdminRoute from "./components/admin/AdminRoute";
-import AdminLayout from "./components/admin/AdminLayout";
+
 
 const router = createBrowserRouter([
   {
@@ -25,25 +21,7 @@ const router = createBrowserRouter([
       { path: "projects", element: <Navigate to="/#projecten" replace /> },
       { path: "contact", element: <Navigate to="/#contact" replace /> },
       { path: "repertoire", element: <Navigate to="/" replace /> },
-    ],
-  },
-  {
-    path: "/admin/login",
-    element: <AdminLogin />,
-  },
-  {
-    element: <AdminRoute />,
-    children: [
-      {
-        path: "/admin",
-        element: <AdminLayout />,
-        children: [
-          { index: true, element: <AdminDashboard /> },
-          { path: "events", element: <AdminEventsList /> },
-          { path: "events/new", element: <AdminEventForm /> },
-          { path: "events/:id/edit", element: <AdminEventForm /> },
-        ],
-      },
+      { path: "*", element: <NotFound /> }
     ],
   },
 ]);
