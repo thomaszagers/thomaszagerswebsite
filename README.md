@@ -1,6 +1,6 @@
 # Thomas Zagers Website
 
-Professional portfolio website for Thomas Zagers.
+Professional portfolio website for Thomas Zagers Music.
 
 ## Project structure
 
