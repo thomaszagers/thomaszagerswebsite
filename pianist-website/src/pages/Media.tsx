@@ -180,32 +180,23 @@ function MediaTile({
     <button
       type="button"
       onClick={onOpen}
-      className="group relative aspect-[3/4] overflow-hidden bg-white shadow-[0_10px_24px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_36px_rgba(36,61,120,0.10)]"
+      aria-label={`Open ${item.title}`}
+      className="group overflow-hidden bg-white shadow-[0_10px_24px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_34px_rgba(36,61,120,0.08)]"
     >
       {previewImage ? (
         <img
           src={previewImage}
           alt={item.title}
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+          className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] sm:aspect-[4/3]"
         />
       ) : (
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(235,241,250,0.94))]" />
-      )}
-
-      <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(7,10,17,0.22)_0%,rgba(7,10,17,0.08)_42%,rgba(7,10,17,0.12)_100%)]" />
-
-      {!previewImage ? (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/14 text-white backdrop-blur-md sm:h-14 sm:w-14">
-            <FallbackIcon size={18} className="sm:hidden" />
-            <FallbackIcon size={24} className="hidden sm:block" />
+        <div className="flex aspect-square w-full items-center justify-center bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(243,240,235,0.95))] sm:aspect-[4/3]">
+          <div className="flex h-10 w-10 items-center justify-center border border-[var(--border)] bg-white text-[var(--accent)] sm:h-14 sm:w-14">
+            <FallbackIcon size={16} className="sm:hidden" />
+            <FallbackIcon size={22} className="hidden sm:block" />
           </div>
         </div>
-      ) : null}
-
-      <div className="absolute left-2 top-2 rounded-full border border-white/12 bg-black/24 px-2 py-1 text-[8px] font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-sm sm:left-3 sm:top-3 sm:px-3 sm:text-[10px]">
-        {formatMediaType(item.type)}
-      </div>
+      )}
     </button>
   );
 }
@@ -501,7 +492,7 @@ export default function Media() {
               {mediaPage?.emptyText || "No media available yet."}
             </div>
           ) : (
-            <div className="grid grid-cols-3 gap-2 sm:gap-4">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 lg:gap-5">
               {sortedItems.map((item) => {
                 const previewImage = getMediaPreviewImage(item, spotifyThumbs);
 
