@@ -3,6 +3,7 @@ import groq from "groq";
 export const siteSettingsQuery = groq`
   *[_type == "siteSettings" && _id == "siteSettings"][0]{
     siteTitle,
+    browserTitle,
     contactHeading,
     contactIntro,
     contactButtonLabel,
@@ -121,7 +122,7 @@ export const projectsQuery = groq`
 `;
 
 export const mediaItemsQuery = groq`
-  *[_type == "mediaItem"] | order(featured desc, order asc, _createdAt asc){
+  *[_type == "mediaItem"] | order(order asc, _createdAt asc){
     _id,
     title,
     type,
@@ -130,6 +131,7 @@ export const mediaItemsQuery = groq`
     embedUrl,
     caption,
     featured,
+    homepageOrder,
     order
   }
 `;

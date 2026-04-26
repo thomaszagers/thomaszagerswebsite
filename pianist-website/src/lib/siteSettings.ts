@@ -5,6 +5,9 @@ export function resolveSiteSettings(siteSettings: SiteSettingsData | null) {
 
   return {
     siteTitle: siteSettings?.siteTitle || "Thomas Zagers",
+    browserTitle:
+      siteSettings?.browserTitle ||
+      "Thomas Zagers | Pianist",
     contactHeading: siteSettings?.contactHeading || "Contact",
     contactIntro: siteSettings?.contactIntro || "Stuur een mail naar",
     contactButtonLabel: siteSettings?.contactButtonLabel || "Neem contact",

@@ -122,13 +122,10 @@ function getMediaEmbedConfig(embedUrl?: string): MediaEmbedConfig | null {
 
 function sortMediaItems(items: MediaItemData[]) {
   return [...items].sort((a, b) => {
-    const featuredDiff =
-      Number(Boolean(b.featured)) - Number(Boolean(a.featured));
-    if (featuredDiff !== 0) return featuredDiff;
-
     const orderDiff =
       (a.order ?? Number.MAX_SAFE_INTEGER) -
       (b.order ?? Number.MAX_SAFE_INTEGER);
+
     if (orderDiff !== 0) return orderDiff;
 
     return a.title.localeCompare(b.title);

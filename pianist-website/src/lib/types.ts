@@ -16,6 +16,7 @@ export type SocialLink = {
 
 export type SiteSettingsData = {
   siteTitle?: string;
+  browserTitle?: string;
   contactHeading?: string;
   contactIntro?: string;
   contactButtonLabel?: string;
@@ -110,6 +111,7 @@ export type MediaItemData = {
   embedUrl?: string;
   caption?: string;
   featured?: boolean;
+  homepageOrder?: number;
   order?: number;
 };
 

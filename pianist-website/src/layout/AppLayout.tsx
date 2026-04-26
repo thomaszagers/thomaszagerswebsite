@@ -3,6 +3,7 @@ import { Outlet, useLocation } from "react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { scrollToHash } from "../lib/scroll";
+import DocumentTitle from "../components/DocumentTitle";
 
 export default function AppLayout() {
   const location = useLocation();
@@ -32,6 +33,7 @@ export default function AppLayout() {
 
   return (
     <div className="flex min-h-screen flex-col bg-[var(--background)] text-[var(--foreground)]">
+      <DocumentTitle />
       <Navbar />
       <main className={`flex-1 ${isOverlayHeroPage ? "" : "pt-20 md:pt-24"}`}>
         <Outlet />

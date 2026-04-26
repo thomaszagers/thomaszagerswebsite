@@ -393,6 +393,21 @@ export default function Home() {
 
   const previewMedia = mediaItems
     .filter((item) => item.featured === true)
+    .sort((a, b) => {
+      const homepageOrderDiff =
+        (a.homepageOrder ?? Number.MAX_SAFE_INTEGER) -
+        (b.homepageOrder ?? Number.MAX_SAFE_INTEGER);
+
+      if (homepageOrderDiff !== 0) return homepageOrderDiff;
+
+      const mediaPageOrderDiff =
+        (a.order ?? Number.MAX_SAFE_INTEGER) -
+        (b.order ?? Number.MAX_SAFE_INTEGER);
+
+      if (mediaPageOrderDiff !== 0) return mediaPageOrderDiff;
+
+      return a.title.localeCompare(b.title);
+    })
     .slice(0, 3);
 
   const resolvedSiteSettings = resolveSiteSettings(siteSettings);
